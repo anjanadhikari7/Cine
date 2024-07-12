@@ -1,17 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Movies from "./Pages/Movies";
-import WishList from "./Pages/WishList";
 import NavBar from "./Components/NavBar";
+import Movies from "./Pages/Movies";
 
 const App = () => {
   return (
     <>
-      <NavBar />
-
       <Routes>
         <Route path="/" element={<Movies />} />
-        <Route path="/wishlist" element={<WishList />} />
+        <Route path="/wishlist" element={<Movies />} />
       </Routes>
     </>
   );

@@ -1,4 +1,4 @@
-import { MOVIE_CREDITS_URL, MOVIE_DETAILS_URL } from "../apiConfig";
+import { MOVIE_CREDITS_URL, MOVIE_DETAILS_URL } from "./apiConfig";
 
 export const fetchMovieDetails = async (movieId) => {
   try {

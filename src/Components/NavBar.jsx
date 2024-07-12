@@ -1,30 +1,31 @@
-import { Col, Row } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 import SearchBar from "./SearchBar";
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import logo from "../utilities/logo.png";
 
 const NavBar = () => {
-  const { wishList } = useSelector((state) => state.movie);
-  console.log(wishList);
   return (
-    <Row className="justify-content-center mb-4">
-      <Col xs={12} md={10} className="d-flex justify-content-between">
-        <div className="header d-flex justify-content-center flex-grow-1">
-          <SearchBar />
-        </div>
-        {wishList.length > 0 && (
-          <div className="d-flex align-items-center ms-3">
-            <Link
-              to="/WishList"
-              className="text-light d-flex align-items-center"
-            >
-              <FaHeart className="me-2" /> My WishList
-            </Link>
-          </div>
-        )}
-      </Col>
-    </Row>
+    <Navbar bg="light" expand="lg">
+      <Navbar.Brand href="#home">
+        <Link to="/">
+          <img
+            src={logo}
+            width="100"
+            height="100"
+            className="d-inline-block align-top"
+            alt="Logo"
+          />
+        </Link>
+      </Navbar.Brand>
+      <SearchBar />
+      <Navbar.Text>
+        <Link to="/wishList">
+          <FaHeart className="me-2" /> My WishList
+        </Link>
+      </Navbar.Text>
+    </Navbar>
   );
 };
 
